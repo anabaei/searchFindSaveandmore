@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   post 'products/find' => 'products#find'
    post 'products/ajaxcallname' => 'products#ajaxcallname'
     post 'products/ajaxcallsku' => 'products#ajaxcallsku'
+    get 'products/thankyou' => 'products#thankyou'
+    get 'products/show' => 'products#show'
+    post 'products/index' => "products#index" 
 
+    resources :products
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

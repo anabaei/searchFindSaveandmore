@@ -1,0 +1,32 @@
+
+
+
+<% render text: @pros.inspect %>
+<div class="col-md-12"><br><br></div>
+<div class="col-md-4"></div>
+<div class="col-md-4">
+	<h2>My List </h2>
+	<table class="table table.bordered">
+		<% if @pros.nil? %>
+		   <% else %>
+			<% @pros.each do |j| %>
+			<tr> 
+			   <td>
+				<%= j.sku %>
+			  </td>
+			  <td>
+			    <%= j.name %>
+			  </td>
+			  <td><%= link_to 'Delete', product_path(j),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+			  <td>
+			  <%= "          " %>
+			  </td>
+			<td><%= link_to 'Details', 'http://www.bcliquorstores.com/product/'+j.sku %></td>
+			</tr>
+			 <% end %> 
+			</table>
+		  <% end %>	
+	</div>
+<div class="col-md-4"></div>

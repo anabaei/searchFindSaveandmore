@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+a {
+    color: #33B793 !important;
+    text-decoration: none !important;
+    background-color: darkolivegreen !important;
+    color: antiquewhite !important;
+    padding: 2% 42% !important;
+}
+
+
+
+td  a 
+{
+   
+    text-decoration: none !important;
+    background-color: grey !important;
+    color: antiquewhite !important;
+    padding: 4% ;
+  
+}
+
+table td:nth-child(3)  a 
+{
+   
+    text-decoration: none !important;
+    background-color:  #d9d9f2 !important;
+    color: black !important;
+    padding: 4% ;
+  
+}

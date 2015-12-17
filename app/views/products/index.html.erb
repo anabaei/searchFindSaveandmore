@@ -1,35 +1,107 @@
 <style>
+@media print {
+  main   {
+    display: none;
+  }
+
+  #main   {
+    display: none;
+  }
+ #results
+ {
+ 	display: block;
+ }
+
+}
  input 
  {
  color: black;
  margin-top: 3%;
 
+
+
  }
 </style>
 
-<center>
+<div class="col-md-4"></div>
+
+<main>
+<div class="col-md-4">
+       
 <%= form_tag(products_find_path, id: "sear",  remote: true  )do %>  <!-- remote: true -->
-           <%= text_field_tag :search_sku, params[:search_sku], placeholder: "SKU"%> <br>
-           <%= text_field_tag :search_name, params[:search_name], placeholder: "PRODUCT NAME" %> <br>
-           <%= text_field_tag :search_country, params[:search_country], placeholder: "COUNTRY" %> <br>
-           <%= text_field_tag :search_cat, params[:search_cat], placeholder: "CATEGORY" %>  <br>
-           <% text_field_tag :search_size, params[:search_size], placeholder: "SIZE" %>   <br>     
- <%= submit_tag "Search !", class: "btn btn-info" , id: "s"%>
+           <%= text_field_tag :search_sku, params[:search_sku], placeholder: "SKU", :class => "form-control"%> <br>
+           <%= text_field_tag :search_name, params[:search_name], placeholder: "PRODUCT NAME" , :class => "form-control"%> <br>
+           <%= text_field_tag :search_country, params[:search_country], placeholder: "COUNTRY", :class => "form-control" %> <br>
+           <%= text_field_tag :search_cat, params[:search_cat], placeholder: "CATEGORY" , :class => "form-control" %>  <br>
+           <% text_field_tag :search_size, params[:search_size], placeholder: "SIZE" %>       
+ <%= submit_tag "Search !", class: "btn btn-info form-control" , id: "s"%>
 <% end %>
-</center>
+    
+
+   
+
+      
+ <!-- remote: true -->
+       
+       <br>
+  <!--  link_to "Profile", controller: "profiles", action: "show", id: @profile -->
+ <%= link_to "My List!", action: "show", class: 'btn btn-danger form-control' , id: "mylist"  %> 
+   
 
 
-<%= form_tag(products_path )do %>  <!-- remote: true -->
-          
-           
- <%= submit_tag "save", class: "btn btn-success" , id: "dddd"%>
-
-
-<% end %>
 
 
 
+
+
+
+</main>
+</div>
+<div class="col-md-4"></div>
+<div class="col-md-12"><br>
+<legend></legend>
+</div>
+<div class="col-md-3"></div>
+<div class="col-md-6">
 <div id="results"></div>
+<span id="main">
+       <div class="col-md-3">
+       	<%= form_tag(products_path )do %> 
+ <%= submit_tag "save", class: "btn btn-success" , id: "save"%>
+ <% end %>
+      </div>
+      <div class="col-md-6"></div>
+      <div class="col-md-3">
+ <%= button_tag "PRINT", onclick: "printpage()", class: "btn btn-default", id: "print" %>
+   </div>
+</div>
+<div class="col-md-3"></div>
+<script>
+function printpage()
+{
+   window.print()
+}s
+
+$( document ).ready(function() {
+
+ $("#save").css("display","none");
+ $("#print").css("display","none");
+
+});
 
 
 
+
+
+$("#s").click(function()
+{
+
+ 
+ $("#save").delay("slow").fadeIn();
+ $("#print").delay("slow").fadeIn();
+ 
+});
+
+</script>
+
+</span>

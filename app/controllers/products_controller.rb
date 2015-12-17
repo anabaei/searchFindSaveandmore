@@ -3,6 +3,11 @@ class ProductsController < ApplicationController
 
   def index
   end
+ 
+  def show
+    @pros = Product.all
+  end
+
 
   def find
   	  @@finalname= []
@@ -108,9 +113,36 @@ class ProductsController < ApplicationController
 
 
      def create
-      render text: @@finalsku.inspect
+        sav = 0
+       cont =  @@finalsku.length
+       i = 0
 
-     end
+           while	i < cont
+                pro = Product.new
+         		pro.sku = @@finalsku[i]
+         		pro.name = @@finalname[i]
+                 i += 1
+             if pro.save
+                sav = 1
+             end  
+           end
+
+           if sav
+        	render 'thankyou'
+        	else
+        	
+        	end 
+
+    end
+
+
+   def destroy
+       @product = Product.find(params[:id])
+       @product.destroy
+ 
+        redirect_to products_show_path
+   end
+
 
  end
 
