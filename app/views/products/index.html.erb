@@ -1,0 +1,35 @@
+<style>
+ input 
+ {
+ color: black;
+ margin-top: 3%;
+
+ }
+</style>
+
+<center>
+<%= form_tag(products_find_path, id: "sear",  remote: true  )do %>  <!-- remote: true -->
+           <%= text_field_tag :search_sku, params[:search_sku], placeholder: "SKU"%> <br>
+           <%= text_field_tag :search_name, params[:search_name], placeholder: "PRODUCT NAME" %> <br>
+           <%= text_field_tag :search_country, params[:search_country], placeholder: "COUNTRY" %> <br>
+           <%= text_field_tag :search_cat, params[:search_cat], placeholder: "CATEGORY" %>  <br>
+           <% text_field_tag :search_size, params[:search_size], placeholder: "SIZE" %>   <br>     
+ <%= submit_tag "Search !", class: "btn btn-info" , id: "s"%>
+<% end %>
+</center>
+
+
+<%= form_tag(products_path )do %>  <!-- remote: true -->
+          
+           
+ <%= submit_tag "save", class: "btn btn-success" , id: "dddd"%>
+
+
+<% end %>
+
+
+
+<div id="results"></div>
+
+
+

@@ -1,0 +1,17 @@
+$('#results').html("<table class=\"table table.bordered\">"
+  	 + "<tr> "
+      + "   	<th>Product Name   </th>"
+      + "      <th> SKU   </th> "
+    + " </tr> "
+  + "  <% if @response_name.nil? %> "
+  + "  " 	
+  + "  <% else @response_name.each do |j| %> " 
+   + "      <tr>          "   
+     + "         <td id=\"product_name\"><%= j[:product_name] %> </td> "
+   + "           <td id=\"product_ske\">   <%= j[:sku] %> </td> "
+    + "     </tr>  "
+  + "  <% end %>"
+    + "  <% end %>"
++ " </table>");
+
+
