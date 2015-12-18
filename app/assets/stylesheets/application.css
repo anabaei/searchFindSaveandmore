@@ -13,27 +13,36 @@
  *= require_tree .
  *= require_self
  */
-a {
-    color: #33B793 !important;
-    text-decoration: none !important;
-    background-color: darkolivegreen !important;
-    color: antiquewhite !important;
-    padding: 2% 42% !important;
+a{
+	padding:5px 10px;
+	background:#9c3;
+	color:#9c3 !important;
+	font:bold 12px arial;
+}
+
+a:hover{
+
+	background:grey;
+	color:white !important;
+}
+
+div > a {
+	padding:3% 42%;
+	background:grey;
+	color:white !important;
+	font:bold 12px arial;
+}
+
+div > a:hover {
+	
+
+	
+	
 }
 
 
 
-td  a 
-{
-   
-    text-decoration: none !important;
-    background-color: grey !important;
-    color: antiquewhite !important;
-    padding: 4% ;
-  
-}
-
-table td:nth-child(3)  a 
+/*table td:nth-child(3)  a 
 {
    
     text-decoration: none !important;
@@ -41,4 +50,4 @@ table td:nth-child(3)  a
     color: black !important;
     padding: 4% ;
   
-}
+}*/

@@ -34,27 +34,15 @@
            <%= text_field_tag :search_country, params[:search_country], placeholder: "COUNTRY", :class => "form-control" %> <br>
            <%= text_field_tag :search_cat, params[:search_cat], placeholder: "CATEGORY" , :class => "form-control" %>  <br>
            <% text_field_tag :search_size, params[:search_size], placeholder: "SIZE" %>       
- <%= submit_tag "Search !", class: "btn btn-info form-control" , id: "s"%>
+ <%= submit_tag "Search !", class: "btn btn-primary form-control" , id: "s"%>
 <% end %>
-    
-
-   
-
-      
+       
  <!-- remote: true -->
        
        <br>
   <!--  link_to "Profile", controller: "profiles", action: "show", id: @profile -->
  <%= link_to "My List!", action: "show", class: 'btn btn-danger form-control' , id: "mylist"  %> 
    
-
-
-
-
-
-
-
-
 </main>
 </div>
 <div class="col-md-4"></div>
@@ -88,9 +76,6 @@ $( document ).ready(function() {
  $("#print").css("display","none");
 
 });
-
-
-
 
 
 $("#s").click(function()
