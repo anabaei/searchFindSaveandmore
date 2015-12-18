@@ -37,7 +37,8 @@ class ProductsController < ApplicationController
 			        </soapenv:Envelope>)
 			       response_name = client.call(:get_base_products_by_name, xml: results_name)
 			       @response_name =  response_name.to_array(:base_products_by_name_response,:base_product)
-                    
+                  ## Everything we want are exist in response_name array, thus at below we put them into finalnames to 
+                  ## be able to save them from another action  
                      @response_name.each do |j|  
 		   		        @@finalname[n] = j[:product_name] 
 		   	            @@finalsku[n] =	j[:sku] 
@@ -46,6 +47,7 @@ class ProductsController < ApplicationController
 
 			          respond_to do |format|
                           #    #format.html {render "products/index" }
+                          # here we call the method js and only variable is passing is response_name
                             format.js { render :action => 'ajaxcallname.js.erb', lcoals: { response_name: @response_name } }
                        end
 
